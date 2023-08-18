@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="card" class="position-absolute top-0 start-50 translate-middle" style="width: 18rem;">
+        <div class="card-header">
+          Reservation Details
+        </div> 
+        {% if reservation_details %}
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Reservation ID: {{reservation_details.reservation_id}}</li>
+          <li class="list-group-item">Class: {{reservation_details.details.selected_class}}</li>
+          <li class="list-group-item">Cabin Number: {{reservation_details.details.cabin_number}}</li>
+          <li class="list-group-item">Seats Reserved: {{reservation_details.details.seats_reserved}}</li>
+          <li class="list-group-item">Total Fare: {{reservation_details.details.total_fare}}</li>
+          <li class="list-group-item">Payment Link: {{reservation_details.details.payment_link}}</li>
+        </ul>
+        {% else %}
+        <li class="list-group-item">Reservation is not done</li>
+        {% endif %}
+      </div>
+      <hr>
+      <div>
+        <button type="button" class="btn btn-outline-primary"><a href="{% url 'home' %}">HOME </a></button>
+      </div>
+      
+    
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
